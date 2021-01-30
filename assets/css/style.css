@@ -17,6 +17,14 @@ header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url(../images/hero-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
 }
 
 header h1 {
@@ -24,6 +32,7 @@ header h1 {
     font-size: 36px;
     color: #fce138;
     margin: 0;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 header a {
@@ -42,12 +51,21 @@ header nav ul {
     align-items: center;
     list-style: none;
 }
-
+    /* Default State */
 header nav ul li a {
     padding: 10px 15px;
     font-weight: lighter;
     font-size: 1.55vw;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+    /* On Hover */
+    header nav ul li a:hover {
+        background-color: #fce138;
+        color: #024e76;
+        border-radius: 15px;
+        text-shadow: none;
+    }
 
 /* Hero Style Start */
 .hero {
@@ -58,6 +76,8 @@ header nav ul li a {
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
+    background-attachment: fixed;
+    background-position: 80%;
 }
 
 .hero-cta {
@@ -67,6 +87,7 @@ header nav ul li a {
     color: #fff;
     font-size: 18px;
     line-height: 1.2;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-cta h2 {
@@ -76,12 +97,14 @@ header nav ul li a {
 }
 
 .hero-form {
-    background-color: #fce138;
+    background-color:rgba(252, 226, 56, 0.8);
     padding: 20px;
     color: #024e76;
     border: solid 3px #024e76;
     width: 40%;
     margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
 }
 
 .hero-form h3 {
@@ -93,6 +116,7 @@ header nav ul li a {
     margin: 5px 0 15px 0;
 }
 
+    /* Default State */
 .form-input {
     border: 1px solid #024e76;
     display: block;
@@ -101,11 +125,29 @@ header nav ul li a {
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, .75);
 }
+
+    /* On Focus */
+    .form-input:focus {
+        background-color: rgba(255, 255, 255, 1);
+        outline: none;
+    }
 
 .hero-form label {
     margin: 0px;
 }
+
+    /* Default State */
+.hero-form button {
+    border-radius: 15px;
+}
+
+    /* On Hover */
+    .hero-form button:hover {
+        background-color: #39a6b2;
+    }
 
 /* Hero Style End */
 
@@ -143,15 +185,18 @@ section {
     background: #fce138;
 }
 
-.step{
+.step {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+}
+
+.step:not(:last-child) {
+    border-bottom: 1px solid #39a6b2;
 }
 
 .step-info {
@@ -272,6 +317,7 @@ section {
     color: #fce138;
 }
 
+    /* Default State */
 .contact-form input, 
 .contact-form textarea {
     border: 1px solid #024e76;
@@ -282,8 +328,18 @@ section {
     width: 100%;
     margin-bottom: 15px;
     margin-top: 5px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .75)
 }
 
+    /* On Focus */
+    .contact-form input:focus, 
+    .contact-form textarea:focus {
+        background: rgba(255, 255, 255, 1);
+        outline: none;
+    }
+
+    /* Default State */
 .contact-form button {
     width: 100%;
     border: none;
@@ -292,7 +348,14 @@ section {
     text-align: center;
     padding: 15px 0;
     font-size: 16px;
+    border-radius: 15px;
 }
+
+    /* On Hover */
+    .contact-form button:hover {
+        color: #fce138;
+        background: #39a6b2;
+    }
 
 /* apply styles to the <footer> */
 footer {
@@ -339,6 +402,7 @@ footer a {
     header {
         padding-bottom: 0;
         justify-content: center;
+        position: relative;
     }
 
     header h1 {
